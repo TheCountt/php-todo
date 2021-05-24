@@ -98,7 +98,7 @@ pipeline {
         
         stage ('Deploy to All Environment') {
             steps {
-                build job: 'Configuration-Ansible/redundant', parameters: [[$class: 'StringParameterValue', name: 'inventory_file', value: 'inventory/${inventory_file}']], propagate: false, wait: true
+                build job: 'Configuration-Ansible/main', parameters: [[$class: 'StringParameterValue', name: 'inventory_file', value: 'inventory/${inventory_file}']], propagate: false, wait: true
             }
         }
     }
